@@ -1,0 +1,37 @@
+<head>
+  <title>accounts</title>
+</head>
+
+<body>
+  <h2>Give&Get</h2>
+
+  {{#if currentUser}}
+    {{> settings}}
+{{else}}
+  {{> signup}}
+  {{> login}}
+{{/if}}
+</body>
+
+<template name="signup">
+  <h3>Sign Up</h3>
+  <form>
+    <input type="email" name="signupEmail" placeholder="Email"><br><br>
+    <input type="password" name="signupPassword" placeholder="Password"><br><br>
+    <input type="submit" value="Sign Up">
+  </form>
+</template>
+
+<template name="login">
+    <h3>Log in</h3>
+  <form>
+    <input type="email" name="loginEmail" placeholder="Email"><br><br>
+    <input type="password" name="loginPassword" placeholder="Password"><br><br>
+    <input type="submit" value="Login">
+  </form>
+</template>
+
+<template name="settings">
+  <p>You're logged in!</p>
+  <p><a href="#" class="logout">Logout</a></p>
+</template>
